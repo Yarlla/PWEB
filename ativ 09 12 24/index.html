@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Controle Contábil</h1>
+    <h2>Cálculo do Reajuste do Salário de um Funcionário</h2>
+    <h3>Insira seu salário:</h3>
+    <input type="number" name="salario" id="salario">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res">Resultado</div>
+
+    <script>
+        function calcular(){
+            var sal = window.document.getElementById('salario');
+            var res = window.document.getElementById('res');
+            var s = Number(sal.value);
+
+            if(s < 500){
+                var cal = s + (s*0.15);
+                res.innerText = `Seu salário é de ${s} reais, portanto o reajuste é de 15%. E o valor final ficará: ${cal} reais`;
+            }
+            if(s >= 500 && s <=1000){
+                var cal = s + (s*0.1);
+                res.innerText = `Seu salário é de ${s} reais, portanto o reajuste é de 10%. E o valor final ficará: ${cal} reais`;
+            }
+            if(s > 1000){
+                var cal = s + (s*0.05);
+                res.innerText = `Seu salário é de ${s} reais, portanto o reajuste é de 5%. E o valor final ficará: ${cal} reais`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Classificação do Triângulo</h1>
+    <input type="number" name="lado1" id="lado1">
+    <input type="number" name="lado2" id="lado2">
+    <input type="number" name="lado3" id="lado3">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res">Resultado</div>
+
+    <script>
+        function calcular(){
+            var la1 = window.document.getElementById('lado1');
+            var la2 = window.document.getElementById('lado2');
+            var la3 = window.document.getElementById('lado3');
+            var res = window.document.getElementById('res');
+
+            var l1 = Number(la1.value);
+            var l2 = Number(la2.value);
+            var l3 = Number(la3.value);
+
+            if (l1<l2+l3 && l2<l1+l3 && l3<l1+l2){
+                if (l1==l2 && l2==l3){
+                    res.innerText = "Equilátero";
+                }
+                else if(l1==l2 || l1==l3 || l3==l2){
+                    res.innerText = "Isósceles";
+                }
+                else{
+                    res.innerText = "Escaleno";
+                }
+            }
+            else{
+                res.innerText = "Não forma um triângulo";
+            }
+        }
+    </script>
+</body>
+</html>
