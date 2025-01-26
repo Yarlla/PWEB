@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade</title>
+</head>
+<body>
+    <!--Questão 01-->
+    <h1>Cálculo da Idade:</h1>
+    <h2>Insira o seu ano de nascimento e depois o ano atual</h2>
+    <input type="number" name="txtn1" id="txtn1"> -
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="CALCULAR" onclick="calcular()" >
+
+    <div id="cal"><br>Resultado do Cálculo</div>
+    <script>
+        function calcular(){
+            //pode usar tanto o querySelector() ou getElementById()
+            var tn1 = window.document.getElementById('txtn1');
+            var tn2 = window.document.getElementById('txtn2');
+            var res = window.document.getElementById('cal');
+
+            var n1 = Number(tn1.value);
+            var n2 = Number(tn2.value);
+            var c = n2 - n1;
+            cal.innerHTML = `A sua idade é de ${c} anos`
+        }
+    </script>
+
+    <!--Questão 02-->
+    <h1>Cálculo de Orçamento:</h1>
+    <h2>Insira a quantidade de livros que você deseja comprar</h2>
+    <input type="number" name="txtq" id="txtq"> 
+    <input type="button" value="FAZER ORÇAMENTO" onclick="fazerOrcamento()">
+
+    <div id="orc"><br>Resultado do Orçamento</div>
+    <script>
+        function fazerOrcamento(){
+            var tq =  window.document.getElementById('txtq');
+            var r = window.document.getElementById('orc');
+
+            var q = Number(tq.value);
+            var o = 10*q;
+            orc.innerHTML = `Preço: ${o}`
+        }
+    </script>
+</body>
+</html>

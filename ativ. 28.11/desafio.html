@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+</head>
+<body>
+    <!--Questão 01-->
+    <h1>Calculadora</h1>
+    <h2>Insira dois números</h2>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+
+    <input type="button" value="somar" onclick="somar()" >
+    <input type="button" value="subtrair" onclick="subtrair()" >
+    <input type="button" value="multiplicar" onclick="multiplicar()" >
+    <input type="button" value="dividir" onclick="dividir()" >
+
+    <div id="calculo">Resultado do Cálculo</div>
+
+    <script>
+        function pegarVar(){
+            var tnum1 = window.document.getElementById('txtnum1');
+            var tnum2 = window.document.getElementById('txtnum2');
+            var soma = window.document.getElementById('calculo');
+
+            var n1 = Number(tnum1.value);
+            var n2 = Number(tnum2.value);
+            return {n1, n2, calculo};
+        }
+
+        function somar(){
+            const { n1, n2, calculo } = pegarVar();
+            var som = n1 + n2;
+            calculo.innerHTML = `A soma é de: ${som}`
+        }
+
+        function subtrair(){
+            const { n1, n2, calculo } = pegarVar();
+            var s = n1 - n2;
+            calculo.innerHTML = `A subtração é de: ${s}`
+
+        }
+
+        function multiplicar(){
+            const { n1, n2, calculo } = pegarVar();
+            var m = n1 * n2;
+            calculo.innerHTML = `A multiplicação é de: ${m}`
+        }
+
+        function dividir(){
+            const { n1, n2, calculo } = pegarVar();
+            var d = n1/n2;
+            calculo.innerHTML = `A divisão é de: ${d}`
+        }
+    </script>
+
+    <!--Questão 02-->
+    
+</body>
+</html>
